@@ -546,6 +546,41 @@
     width: 15px;
     height: 15px;
   }
+
+  /* Adjust grid layout for age and gender boxes */
+  .age-groups, .gender-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .stat-box {
+    min-width: unset;
+    width: 100%;
+    padding: 15px 10px;
+  }
+
+  /* Make text smaller on mobile */
+  .stat-box h3 {
+    font-size: 14px;
+  }
+
+  .stat-box p {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  /* Adjust section padding */
+  .demographic-section {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+  }
+
+  /* Adjust container padding */
+  .demographics-container {
+    padding: 10px 5px;
+  }
 }
 
 /* Small mobile devices */
@@ -634,7 +669,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
-  padding: 10px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-box {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Add loading states for better perceived performance */
@@ -688,4 +735,23 @@
 .demographics-container {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+}
+
+/* Additional styles for very small screens */
+@media (max-width: 320px) {
+  .age-groups, .gender-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-box {
+    padding: 10px;
+  }
+
+  .stat-box h3 {
+    font-size: 13px;
+  }
+
+  .stat-box p {
+    font-size: 16px;
+  }
 }
